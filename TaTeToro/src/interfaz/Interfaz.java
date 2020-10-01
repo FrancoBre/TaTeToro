@@ -226,8 +226,8 @@ public class Interfaz {
 				Jugador jugador1=new Jugador(1);
 				Jugador jugador2=new Jugador(2);
 				
-				jugador1.setNombre(text_nombr1.getText());
-				jugador2.setNombre(text_nombr2.getText());
+//				jugador1.setNombre(text_nombr1.getText());
+//				jugador2.setNombre(text_nombr2.getText());
 				
 				ingreso.setVisible(false);
 				juego.setVisible(true);
