@@ -165,7 +165,7 @@ public class Interfaz {
 				
 				tablero.setJugada(jugador, 1, 2);
 				jugador.cambiarTurno(jugador);
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano.
 			}
 		});
 		btn_6.setBounds(209, 126, 55, 55);
