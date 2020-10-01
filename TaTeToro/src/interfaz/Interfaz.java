@@ -8,6 +8,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import juego.Jugador;
+import juego.Jugada;
+import juego.Tablero;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -73,6 +75,8 @@ public class Interfaz {
 		JLabel turno = new JLabel("");
 		turno.setBounds(144, 11, 120, 14);
 		juego.add(turno);
+		Tablero tablero=new Tablero();
+		Jugador jugador=new Jugador(1);
 		
 		//Declaracion de botones 
 		JButton btn_1 = new JButton("1");
@@ -94,7 +98,9 @@ public class Interfaz {
 //				
 //			btn_1.setIcon(new ImageIcon(img));
 //				btn_1.setIcon(imageIcon);
-				
+				tablero.setJugada(jugador, 0, 0);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_1.setBounds(79, 60, 55, 55);
@@ -104,6 +110,10 @@ public class Interfaz {
 		btn_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 0, 1);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_2.setBounds(144, 60, 55, 55);
@@ -113,6 +123,10 @@ public class Interfaz {
 		btn_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 0, 2);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_3.setBounds(209, 60, 55, 55);
@@ -122,6 +136,10 @@ public class Interfaz {
 		btn_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 1, 0);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_4.setBounds(79, 126, 55, 55);
@@ -131,6 +149,10 @@ public class Interfaz {
 		btn_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 1, 1);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_5.setBounds(144, 126, 55, 55);
@@ -140,6 +162,10 @@ public class Interfaz {
 		btn_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 1, 2);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_6.setBounds(209, 126, 55, 55);
@@ -149,6 +175,10 @@ public class Interfaz {
 		btn_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 2, 0);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_7.setBounds(79, 192, 55, 55);
@@ -158,6 +188,10 @@ public class Interfaz {
 		btn_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 2, 1);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_8.setBounds(144, 192, 55, 55);
@@ -167,13 +201,17 @@ public class Interfaz {
 		btn_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				tablero.setJugada(jugador, 2, 2);
+				jugador.cambiarTurno(jugador);
+			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_9.setBounds(209, 192, 55, 55);
 		juego.add(btn_9);
 		
 		JLabel lblNewLabel_1 = new JLabel("Turno de :");
-		lblNewLabel_1.setBounds(79, 11, 55, 14);
+		lblNewLabel_1.setBounds(79, 11, 97, 14);
 		juego.add(lblNewLabel_1);
 		
 		
