@@ -2,6 +2,7 @@ package juego;
 
 public class Jugador {
 	private int numero;
+	private String nombre;
 	
 	public Jugador(int numero) {
 		this.numero=numero;
@@ -15,4 +16,7 @@ public class Jugador {
 		this.numero = numero;
 	}
 	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 }
