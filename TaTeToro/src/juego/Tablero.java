@@ -3,7 +3,7 @@ package juego;
 public class Tablero {
 	private int[][] tablero;
 	
-	//La idea es tener una matriz de 3x3, y en cada turno poner 1 o 2 según donde juegue el jugador
+	//La idea es tener una matriz de 3x3, y en cada turno poner 1 o 2 segun donde juegue el jugador
 	//Y verificar si gana a partir de este tablero
 	public Tablero() {
 		tablero=new int[3][3];
