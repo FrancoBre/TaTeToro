@@ -26,6 +26,7 @@ public class Interfaz {
 	private JTextField text_nombr1;
 	private JTextField text_nombr2;
 	int resp; 
+	private JTextField textGanador;
 
 
 	/**
@@ -65,247 +66,41 @@ public class Interfaz {
 		frame.getContentPane().setLayout(null);
 		
 		
+		
+		JPanel ingreso = new JPanel();
+		ingreso.setBounds(0, 0, 338, 301);
+		frame.getContentPane().add(ingreso);
+		ingreso.setLayout(null);
+		
 		JPanel juego = new JPanel();
-		juego.setBounds(0, 0, 350, 301);
+		juego.setBounds(0, 0, 340, 301);
 		frame.getContentPane().add(juego);
 		
 		juego.setLayout(null);
 		juego.setVisible(false);
 		
+		JPanel resultado = new JPanel();
+		resultado.setLayout(null);
+		resultado.setBounds(0, 0, 338, 301);
+		frame.getContentPane().add(resultado);
 		
+
 		JLabel turno = new JLabel("");
 		turno.setBounds(144, 11, 120, 14);
 		juego.add(turno);
-		Tablero tablero=new Tablero();
-		Jugador jugador=new Jugador(1);
-	
 		
-		//Declaracion de botones 
-		JButton btn_1 = new JButton("");
-		JButton btn_2 = new JButton("");
-		JButton btn_3 = new JButton("");
-		JButton btn_4 = new JButton("");
-		JButton btn_5 = new JButton("");
-		JButton btn_6 = new JButton("");
-		JButton btn_7 = new JButton("");
-		JButton btn_8 = new JButton("");
-		JButton btn_9 = new JButton("");
-		
-		//Action boton 1
-		btn_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-						
-				tablero.setJugada(jugador, 0, 0);
-				
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-					
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_1.setBounds(79, 60, 55, 55);
-		juego.add(btn_1);
-		
-		//Action boton 2
-		btn_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				tablero.setJugada(jugador, 0, 1);
-		
-			//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_2.setBounds(144, 60, 55, 55);
-		juego.add(btn_2);
-		
-		//Action boton 3
-		btn_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 0, 2);
-				
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_3.setBounds(209, 60, 55, 55);
-		juego.add(btn_3);
-		
-		//Action boton 4
-		btn_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 1, 0);
-				
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-				
-				
-				//jugador.cambiarTurno(jugador);
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_4.setBounds(79, 126, 55, 55);
-		juego.add(btn_4);
-		
-		//Action boton 5
-		btn_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 1, 1);
-				
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_5.setBounds(144, 126, 55, 55);
-		juego.add(btn_5);
-		
-		//Action boton 6
-		btn_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 1, 2);
 			
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				jugador.setNumero(resp);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-				
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano.
-			}
-		});
-		btn_6.setBounds(209, 126, 55, 55);
-		juego.add(btn_6);
-		
-		//Action boton 7
-		btn_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 2, 0);
-
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				jugador.setNumero(resp);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-				
-				// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_7.setBounds(79, 192, 55, 55);
-		juego.add(btn_7);
-		
-		//Action boton 8
-		btn_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 2, 1);
-				
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-				
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_8.setBounds(144, 192, 55, 55);
-		juego.add(btn_8);
-		
-		//Action boton 9
-		btn_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-				tablero.setJugada(jugador, 2, 2);
-		
-				
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
-				resp=jugador.cambiarTurno(jugador);
-				if (resp==1) {	
-					turno.setText(text_nombr1.getText());
-				}
-				else {
-					turno.setText(text_nombr2.getText());
-				}
-				
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
-			}
-		});
-		btn_9.setBounds(209, 192, 55, 55);
-		juego.add(btn_9);
-		
-		JLabel lblNewLabel_1 = new JLabel("Turno de :");
-		lblNewLabel_1.setBounds(79, 11, 97, 14);
-		
-		juego.add(lblNewLabel_1);
-		
-		
-		
-		JPanel ingreso = new JPanel();
-		ingreso.setBounds(0, 0, 338, 269);
-		frame.getContentPane().add(ingreso);
-		ingreso.setLayout(null);
+			//Declaracion de botones 
+			JButton btn_1 = new JButton("");
+			JButton btn_2 = new JButton("");
+			JButton btn_3 = new JButton("");
+			JButton btn_4 = new JButton("");
+			JButton btn_5 = new JButton("");
+			JButton btn_6 = new JButton("");
+			JButton btn_7 = new JButton("");
+			JButton btn_8 = new JButton("");
+			JButton btn_9 = new JButton("");
+			
 		
 		JButton btnNewButton = new JButton("Jugar");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -343,8 +138,375 @@ public class Interfaz {
 		JLabel lblJugador = new JLabel("Jugador 2");
 		lblJugador.setBounds(67, 111, 72, 14);
 		ingreso.add(lblJugador);
+		
+		JLabel lblGanador = new JLabel("Ganador");
+		lblGanador.setBounds(68, 105, 72, 14);
+		resultado.add(lblGanador);
+		resultado.setVisible(false);
+		Tablero tablero=new Tablero();
+		Jugador jugador=new Jugador(1);
 		frame.setBackground(UIManager.getColor("Button.disabledShadow"));
-		frame.setBounds(100, 100, 356, 340);
+		frame.setBounds(100, 100, 348, 340);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+			//Action boton 1
+			btn_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_1.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_1.setText("O");
+					}
+					tablero.setJugada(jugador, 0, 0);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+						
+				}
+			});
+			btn_1.setBounds(79, 60, 55, 55);
+			juego.add(btn_1);
+			
+			//Action boton 2
+			btn_2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_2.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_2.setText("O");
+					}
+					tablero.setJugada(jugador, 0, 1);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_2.setBounds(144, 60, 55, 55);
+			juego.add(btn_2);
+			
+			//Action boton 3
+			btn_3.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_3.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_3.setText("O");
+					}
+					tablero.setJugada(jugador, 0, 2);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_3.setBounds(209, 60, 55, 55);
+			juego.add(btn_3);
+			
+			//Action boton 4
+			btn_4.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_4.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_4.setText("O");
+					}
+					tablero.setJugada(jugador, 1, 0);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_4.setBounds(79, 126, 55, 55);
+			juego.add(btn_4);
+			
+			//Action boton 5
+			btn_5.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_5.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_5.setText("O");
+					}
+					tablero.setJugada(jugador, 1, 1);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_5.setBounds(144, 126, 55, 55);
+			juego.add(btn_5);
+			
+			//Action boton 6
+			btn_6.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_6.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_6.setText("O");
+					}
+					tablero.setJugada(jugador, 1, 2);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_6.setBounds(209, 126, 55, 55);
+			juego.add(btn_6);
+			
+			//Action boton 7
+			btn_7.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_7.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_7.setText("O");
+					}
+					tablero.setJugada(jugador, 2, 0);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					jugador.setNumero(resp);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_7.setBounds(79, 192, 55, 55);
+			juego.add(btn_7);
+			
+			//Action boton 8
+			btn_8.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_8.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_8.setText("O");
+					}
+					tablero.setJugada(jugador, 2, 1);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					jugador.setNumero(resp);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_8.setBounds(144, 192, 55, 55);
+			juego.add(btn_8);
+			
+			//Action boton 9
+			btn_9.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					int num_jug = 0;
+					num_jug = jugador.getNumero();
+					if(num_jug==1) {
+						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
+						btn_9.setText("X");
+					}else {
+						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
+						btn_9.setText("O");
+					}
+					tablero.setJugada(jugador, 2, 2);
+					if(Jugada.esGanadora(tablero, jugador)){
+						System.out.println("GANADORRRR NUMERO "+num_jug);
+						//Se muestra el panel de resultado y se esconde el del juego 
+						resultado.setVisible(true);
+						juego.setVisible(false);
+						//Agrego ganador al input de panel resultado
+						textGanador.setText("Jugador "+num_jug+" (VA EL NOMBRE)");
+						//Bloque de input
+						textGanador.setEditable(false);
+					}
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					resp=jugador.cambiarTurno(jugador);
+					if (resp==1) {	
+						turno.setText(text_nombr1.getText());
+					}
+					else {
+						turno.setText(text_nombr2.getText());
+					}
+				}
+			});
+			btn_9.setBounds(209, 192, 55, 55);
+			juego.add(btn_9);
+			
+			JLabel lblNewLabel_1 = new JLabel("Turno de :");
+			lblNewLabel_1.setBounds(79, 11, 97, 14);
+			
+			juego.add(lblNewLabel_1);
+			
+			JButton btn_volverMenu = new JButton("Volver al men\u00FA");
+			btn_volverMenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					//Action volver a jugar
+					juego.setVisible(false);
+					ingreso.setVisible(true);
+					//Limpiar tablero y jugadores
+				}
+			});
+			btn_volverMenu.setBounds(10, 267, 110, 23);
+			juego.add(btn_volverMenu);
+		
+		
+		
+		JButton btnVolverAJugar = new JButton("Volver a jugar");
+		btnVolverAJugar.setBounds(111, 174, 109, 42);
+		resultado.add(btnVolverAJugar);
+		
+		textGanador = new JTextField();
+		textGanador.setColumns(10);
+		textGanador.setBounds(140, 102, 135, 20);
+		resultado.add(textGanador);
+		
+		
 	}
 }
