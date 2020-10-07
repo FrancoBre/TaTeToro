@@ -44,9 +44,18 @@ public class Jugador {
 		else return null;
 	}
 	
-	public void cambiarTurno(Jugador jugador) {
-		if(jugador.getNumero()==1) jugador.setNumero(2);
-		else jugador.setNumero(1);
+	public int cambiarTurno(Jugador jugador) {
+		int resp=0; 
+		if(jugador.getNumero()==1) {
+			jugador.setNumero(2);
+			resp=2;
+		}
+		else {
+			jugador.setNumero(1);
+			resp=1;
+		}
+		
+	return resp; 
 	}
 
 }

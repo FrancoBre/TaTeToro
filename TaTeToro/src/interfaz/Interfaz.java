@@ -25,6 +25,7 @@ public class Interfaz {
 	private JFrame frame;
 	private JTextField text_nombr1;
 	private JTextField text_nombr2;
+	int resp; 
 
 
 	/**
@@ -77,6 +78,7 @@ public class Interfaz {
 		juego.add(turno);
 		Tablero tablero=new Tablero();
 		Jugador jugador=new Jugador(1);
+	
 		
 		//Declaracion de botones 
 		JButton btn_1 = new JButton("1");
@@ -92,14 +94,20 @@ public class Interfaz {
 		//Action boton 1
 		btn_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				Image img = new ImageIcon(this.getClass().getResource("/equis_negra.png")).getImage();
-//				
-//				ImageIcon imageIcon = new ImageIcon(new ImageIcon(this.getClass().getResource("/equis_negra.png")).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
-//				
-//			btn_1.setIcon(new ImageIcon(img));
-//				btn_1.setIcon(imageIcon);
+				//Image img = new ImageIcon(this.getClass().getResource("/equis_negra.png")).getImage();
+						
 				tablero.setJugada(jugador, 0, 0);
-				jugador.cambiarTurno(jugador);
+				
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+					
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -109,10 +117,16 @@ public class Interfaz {
 		//Action boton 2
 		btn_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
 				tablero.setJugada(jugador, 0, 1);
-				jugador.cambiarTurno(jugador);
+		
+			//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -125,7 +139,16 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 0, 2);
-				jugador.cambiarTurno(jugador);
+				
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -138,7 +161,19 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 1, 0);
-				jugador.cambiarTurno(jugador);
+				
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+				
+				
+				//jugador.cambiarTurno(jugador);
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -151,7 +186,16 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 1, 1);
-				jugador.cambiarTurno(jugador);
+				
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -164,7 +208,17 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 1, 2);
-				jugador.cambiarTurno(jugador);
+			
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				jugador.setNumero(resp);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+				
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano.
 			}
 		});
@@ -177,8 +231,19 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 2, 0);
-				jugador.cambiarTurno(jugador);
-			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
+
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				jugador.setNumero(resp);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+				
+				// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
 		btn_7.setBounds(79, 192, 55, 55);
@@ -190,7 +255,17 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 2, 1);
-				jugador.cambiarTurno(jugador);
+				
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+				
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -203,7 +278,17 @@ public class Interfaz {
 				
 				
 				tablero.setJugada(jugador, 2, 2);
-				jugador.cambiarTurno(jugador);
+		
+				
+				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+				resp=jugador.cambiarTurno(jugador);
+				if (resp==1) {	
+					turno.setText(text_nombr1.getText());
+				}
+				else {
+					turno.setText(text_nombr2.getText());
+				}
+				
 			// a implementar, if(Jugada.esGanadora(tablero, jugador))... mostrar un mensaje de que gano
 			}
 		});
@@ -212,7 +297,9 @@ public class Interfaz {
 		
 		JLabel lblNewLabel_1 = new JLabel("Turno de :");
 		lblNewLabel_1.setBounds(79, 11, 97, 14);
+		
 		juego.add(lblNewLabel_1);
+		
 		
 		
 		JPanel ingreso = new JPanel();
@@ -231,7 +318,6 @@ public class Interfaz {
 				
 				ingreso.setVisible(false);
 				juego.setVisible(true);
-				
 				
 				turno.setText(text_nombr1.getText());
 				
