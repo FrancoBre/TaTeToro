@@ -81,20 +81,20 @@ public class Interfaz {
 	
 		
 		//Declaracion de botones 
-		JButton btn_1 = new JButton("1");
-		JButton btn_2 = new JButton("2");
-		JButton btn_3 = new JButton("3");
-		JButton btn_4 = new JButton("4");
-		JButton btn_5 = new JButton("5");
-		JButton btn_6 = new JButton("6");
-		JButton btn_7 = new JButton("7");
-		JButton btn_8 = new JButton("8");
-		JButton btn_9 = new JButton("9");
+		JButton btn_1 = new JButton("");
+		JButton btn_2 = new JButton("");
+		JButton btn_3 = new JButton("");
+		JButton btn_4 = new JButton("");
+		JButton btn_5 = new JButton("");
+		JButton btn_6 = new JButton("");
+		JButton btn_7 = new JButton("");
+		JButton btn_8 = new JButton("");
+		JButton btn_9 = new JButton("");
 		
 		//Action boton 1
 		btn_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Image img = new ImageIcon(this.getClass().getResource("/equis_negra.png")).getImage();
+				
 						
 				tablero.setJugada(jugador, 0, 0);
 				
