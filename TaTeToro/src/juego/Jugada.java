@@ -20,12 +20,8 @@ public class Jugada {
 				fila.add(tablero.getTablero()[i][j]);	
 			}
 			
-			if(iguales(fila, jugadasGanadoras(tablero, jugador))) {
-				System.out.println(fila.toString());
-				System.out.println(jugadasGanadoras(tablero, jugador).toString());
-				System.out.println("Es ganadora horizontal");
+			if(fila.equals(jugadasGanadoras(tablero, jugador)))
 				return true;
-			}
 		}
 		return false;
 	}
@@ -38,10 +34,8 @@ public class Jugada {
 				columna.add(tablero.getTablero()[j][i]);	
 			}
 			
-			if(iguales(columna, jugadasGanadoras(tablero, jugador))) {
-				System.out.println("Es ganadora vertical");
+			if(columna.equals(jugadasGanadoras(tablero, jugador))) 
 				return true;
-			}
 		}
 		return false;
 	}
@@ -54,10 +48,9 @@ public class Jugada {
 			diagonal.add(tablero.getTablero()[i][i]);	
 		}
 		
-		if(iguales(diagonal, jugadasGanadoras(tablero, jugador)) && esGanadoraDiagonal2(tablero, jugador)) {
-			System.out.println("Es ganadora diagonal");
+		if(diagonal.equals(jugadasGanadoras(tablero, jugador)) && esGanadoraDiagonal2(tablero, jugador)) 
 			return true;
-		}
+		
 		return false;
 	}
 	
@@ -70,18 +63,20 @@ public class Jugada {
 			j--;
 		}
 		
-		if(iguales(diagonal, jugadasGanadoras(tablero, jugador))) return true;
+		if(diagonal.equals(jugadasGanadoras(tablero, jugador)))
+			return true;
+		
 		return false;
 	}
 	
-	private static boolean iguales(ArrayList<Integer> jugadas, int[] jugadas2) {
-		for(int i=0; i<jugadas.size(); i++) if(!jugadas.get(i).equals(jugadas2[i])) return false;
-		return true;
-	}
+//	private static boolean iguales(ArrayList<Integer> jugadas, int[] jugadas2) {
+//		for(int i=0; i<jugadas.size(); i++) if(!jugadas.get(i).equals(jugadas2[i])) return false;
+//		return true;
+//	}
 	
-	private static int[] jugadasGanadoras(Tablero tablero, Jugador jugador) {
-		int[] jugadas=new int[3];
-		for(int i=0; i<tablero.getTablero().length; i++) jugadas[i]=jugador.getNumero();
+	private static ArrayList<Integer> jugadasGanadoras(Tablero tablero, Jugador jugador) {
+		ArrayList<Integer> jugadas=new ArrayList<>();
+		for(int i=0; i<tablero.getTablero().length; i++) jugadas.add(jugador.getNumero());
 		return jugadas;
 	}
 
