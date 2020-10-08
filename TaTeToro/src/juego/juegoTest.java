@@ -33,12 +33,36 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaNoGanadoraTest() {
+	public void jugadaNoGanadoraTest1() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 0, 0);
 		tablero.setJugada(jugador1, 1, 1);
 		tablero.setJugada(jugador1, 1, 2);
+		assertFalse(Jugada.esGanadora(tablero, jugador1));
+	}
+	
+	@Test
+	public void jugadaNoGanadoraTest2() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 2);
+		jugador1.cambiarTurno(jugador1);
+		tablero.setJugada(jugador1, 2, 0);
+		jugador1.cambiarTurno(jugador1);
+		tablero.setJugada(jugador1, 1, 1);
+		assertFalse(Jugada.esGanadora(tablero, jugador1));
+	}
+	
+	@Test
+	public void jugadaNoGanadoraTest3() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 0);
+		jugador1.cambiarTurno(jugador1);
+		tablero.setJugada(jugador1, 2, 2);
+		jugador1.cambiarTurno(jugador1);
+		tablero.setJugada(jugador1, 1, 1);
 		assertFalse(Jugada.esGanadora(tablero, jugador1));
 	}
 	

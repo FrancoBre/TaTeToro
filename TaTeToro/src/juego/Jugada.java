@@ -51,14 +51,15 @@ public class Jugada {
 	}
 	
 	private static boolean esGanadoraDiagonal2(Tablero tablero, Jugador jugador) {
+		boolean ret=true;
 		int j=tablero.getTablero().length-1;
 		
-		for(int i=0; i<tablero.getTablero().length; i++) if(j>0) {
-			if(tablero.getTablero()[i][j]!=jugador.getNumero()) return false;
+		for(int i=0; i<tablero.getTablero().length; i++) {
+			ret=ret && tablero.getTablero()[i][j]==jugador.getNumero();
 			j--;
 		}
 		
-		return true;
+		return ret;
 	}
 
 }
