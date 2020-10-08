@@ -85,16 +85,6 @@ public class juegoTest {
 		tablero.setJugada(jugador1, 2, 1);
 		assertTrue(Jugada.esGanadora(tablero, jugador1));
 	}
-	
-	@Test
-	public void jugadaGanadoraToro1() {
-		Tablero tablero=new Tablero();
-		Jugador jugador1=new Jugador(1);
-		tablero.setJugada(jugador1, 0, 1);
-		tablero.setJugada(jugador1, 1, 0);
-		tablero.setJugada(jugador1, 2, 2);
-		assertTrue(Jugada.esGanadora(tablero, jugador1));
-	}
 
 	@Test
 	public void jugadaGanadoraVertical1() {

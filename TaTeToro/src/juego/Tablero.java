@@ -1,5 +1,9 @@
 package juego;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
 public class Tablero {
 	private int[][] tablero;
 	
@@ -22,10 +26,6 @@ public class Tablero {
 			for(int j=0; i<n; i++) tablero[i][j]=0;		
 	}
 
-	public void setTablero(int[][] tablero) {
-		this.tablero=tablero;
-	}
-	
 	public int[][] getTablero() {
 		return tablero;
 	}
