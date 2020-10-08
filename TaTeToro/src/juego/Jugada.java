@@ -20,7 +20,10 @@ public class Jugada {
 				fila.add(tablero.getTablero()[i][j]);	
 			}
 			
-			if(iguales(fila, jugadasGanadoras(tablero, jugador))) return true;
+			if(iguales(fila, jugadasGanadoras(tablero, jugador))) {
+				System.out.println("Es ganadora horizontal");
+				return true;
+			}
 		}
 		return false;
 	}
@@ -33,7 +36,10 @@ public class Jugada {
 				columna.add(tablero.getTablero()[j][i]);	
 			}
 			
-			if(iguales(columna, jugadasGanadoras(tablero, jugador))) return true;
+			if(iguales(columna, jugadasGanadoras(tablero, jugador))) {
+				System.out.println("Es ganadora vertical");
+				return true;
+			}
 		}
 		return false;
 	}
@@ -46,7 +52,10 @@ public class Jugada {
 			diagonal.add(tablero.getTablero()[i][i]);	
 		}
 		
-		if(iguales(diagonal, jugadasGanadoras(tablero, jugador)) && esGanadoraDiagonal2(tablero, jugador)) return true;
+		if(iguales(diagonal, jugadasGanadoras(tablero, jugador)) && esGanadoraDiagonal2(tablero, jugador)) {
+			System.out.println("Es ganadora diagonal");
+			return true;
+		}
 		return false;
 	}
 	

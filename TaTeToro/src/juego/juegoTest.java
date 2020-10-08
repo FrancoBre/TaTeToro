@@ -6,6 +6,14 @@ import org.junit.Test;
 
 public class juegoTest {
 
+	@Test(expected=IllegalArgumentException.class)
+	public void jugadaIlegalTest() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 1, 1);
+		tablero.setJugada(jugador1, 1, 1);
+	}
+	
 	@Test
 	public void creacionTableroTest() {
 		Tablero tablero=new Tablero();
@@ -24,12 +32,14 @@ public class juegoTest {
 		assertTrue(tablero.getTablero()[0][2]==1);
 	}
 	
-	@Test(expected=IllegalArgumentException.class)
-	public void jugadaIlegalTest() {
+	@Test
+	public void jugadaNoGanadoraTest() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 0);
 		tablero.setJugada(jugador1, 1, 1);
-		tablero.setJugada(jugador1, 1, 1);
+		tablero.setJugada(jugador1, 1, 2);
+		assertFalse(Jugada.esGanadora(tablero, jugador1));
 	}
 	
 	@Test

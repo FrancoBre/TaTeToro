@@ -1,5 +1,7 @@
 package juego;
 
+import static org.junit.Assert.assertTrue;
+
 public class Tablero {
 	private int[][] tablero;
 	
@@ -25,6 +27,21 @@ public class Tablero {
 
 	public int tamanio() {
 		return this.tablero.length;
+	}
+	
+	public static void main(String[] args) {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 0);
+		tablero.setJugada(jugador1, 1, 1);
+		tablero.setJugada(jugador1, 1, 2);
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<3; j++) {
+				System.out.print(tablero.getTablero()[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println(Jugada.esGanadora(tablero, jugador1));
 	}
 	
 }
