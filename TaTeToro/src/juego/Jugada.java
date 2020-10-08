@@ -13,45 +13,41 @@ public class Jugada {
 	}
 	
 	private static boolean esGanadoraHorizontal(Tablero tablero, Jugador jugador) {
+		boolean ret2=false;
 		for(int i=0; i<tablero.tamanio(); i++) {
-			ArrayList<Integer> fila=new ArrayList<Integer>();
+			boolean ret1=true;
 			
 			for(int j=0; j<tablero.tamanio(); j++) {
-				fila.add(tablero.getTablero()[i][j]);	
+				ret1=ret1 && tablero.getTablero()[i][j]==jugador.getNumero();	
 			}
 			
-			if(fila.equals(jugadasGanadoras(tablero, jugador)))
-				return true;
+			ret2=ret1 || ret2;
 		}
-		return false;
+		return ret2;
 	}
 	
 	private static boolean esGanadoraVertical(Tablero tablero, Jugador jugador) {
+		boolean ret2=false;
 		for(int i=0; i<tablero.tamanio(); i++) {
-			ArrayList<Integer> columna=new ArrayList<Integer>();
+			boolean ret1=true;
 			
 			for(int j=0; j<tablero.tamanio(); j++) {
-				columna.add(tablero.getTablero()[j][i]);	
+				ret1=ret1 && tablero.getTablero()[j][i]==jugador.getNumero();	
 			}
 			
-			if(columna.equals(jugadasGanadoras(tablero, jugador))) 
-				return true;
+			ret2=ret1 || ret2;
 		}
-		return false;
+		return ret2;
 	}
 	
 	//Las jugadas ganadoras diagonales fueron divididas en dos funciones
 	private static boolean esGanadoraDiagonal(Tablero tablero, Jugador jugador) {
-		ArrayList<Integer> diagonal=new ArrayList<Integer>();
-		
+		boolean ret=true;
 		for(int i=0; i<tablero.tamanio(); i++) {
-			diagonal.add(tablero.getTablero()[i][i]);	
+			ret=ret && tablero.getTablero()[i][i]==jugador.getNumero();	
 		}
 		
-		if(diagonal.equals(jugadasGanadoras(tablero, jugador)) || esGanadoraDiagonal2(tablero, jugador)) 
-			return true;
-		
-		return false;
+		return (ret || esGanadoraDiagonal2(tablero, jugador)); 
 	}
 	
 	private static boolean esGanadoraDiagonal2(Tablero tablero, Jugador jugador) {
@@ -63,12 +59,6 @@ public class Jugada {
 		}
 		
 		return true;
-	}
-	
-	private static ArrayList<Integer> jugadasGanadoras(Tablero tablero, Jugador jugador) {
-		ArrayList<Integer> jugadas=new ArrayList<>();
-		for(int i=0; i<tablero.getTablero().length; i++) jugadas.add(jugador.getNumero());
-		return jugadas;
 	}
 
 }
