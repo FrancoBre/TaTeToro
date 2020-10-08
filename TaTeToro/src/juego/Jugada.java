@@ -1,13 +1,12 @@
 package juego;
 
-import java.util.ArrayList;
-
 public class Jugada {
 
 	public static boolean esGanadora(Tablero tablero, Jugador jugador) {
 		if(esGanadoraHorizontal(tablero, jugador) ||
 				esGanadoraVertical(tablero, jugador) ||
-				esGanadoraDiagonal(tablero, jugador))
+				esGanadoraDiagonal(tablero, jugador) ||
+				esGanadoraToro(tablero, jugador))
 			return true;
 		return false;
 	}
@@ -62,4 +61,28 @@ public class Jugada {
 		return ret;
 	}
 
+	private static boolean esGanadoraToro(Tablero tablero, Jugador jugador) {
+		int[][] matriz=new int[4][3];
+		for(int i=1; i<matriz.length; i++) 
+			for(int j=0; j<matriz[i].length; j++)
+				
+				matriz[i][j]=tablero.getTablero()[i-1][j];
+		
+		for(int h=0; h<matriz[0].length; h++) matriz[0][h]=tablero.getTablero()[2][h];
+		
+		Tablero tableroToro=new Tablero();
+		tableroToro.setTablero(matriz);
+		
+		return esGanadoraHorizontal(tableroToro, jugador);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
