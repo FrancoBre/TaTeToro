@@ -26,6 +26,10 @@ public class Tablero {
 			for(int j=0; i<n; i++) tablero[i][j]=0;		
 	}
 
+	public void setTablero(int[][] matriz) {
+		this.tablero=matriz;
+	}
+	
 	public int[][] getTablero() {
 		return tablero;
 	}

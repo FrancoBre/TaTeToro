@@ -126,4 +126,14 @@ public class juegoTest {
 		assertTrue(Jugada.esGanadora(tablero, jugador1));
 	}
 	
+	@Test
+	public void jugadaGanadoraToroidal() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 1, 2);
+		tablero.setJugada(jugador1, 2, 1);
+		tablero.setJugada(jugador1, 0, 0);
+		assertTrue(Jugada.esGanadora(tablero, jugador1));
+	}
+	
 }

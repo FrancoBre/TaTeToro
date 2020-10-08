@@ -62,4 +62,54 @@ public class Jugada {
 		return ret;
 	}
 
+	//Primera columna pasa a ser la ultima
+	public static Tablero matrizToroidal(Tablero tablero) {
+		Tablero tableroToro=new Tablero();
+		int[][] matriz=new int[3][3];
+		
+		for(int i=0; i<tableroToro.tamanio(); i++)  		//filas
+			for(int j=1; j<tableroToro.tamanio(); j++) 		//columnas
+
+				matriz[i][j]=tablero.getTablero()[i][j-1];
+		
+		for(int h=0; h<tableroToro.tamanio(); h++) matriz[h][2]=tablero.getTablero()[h][0];
+		
+		tableroToro.setTablero(matriz);
+		return tableroToro;
+	}
+	
+	public static void main(String[] args) {
+		Tablero tablero=new Tablero();
+		Jugador jugador=new Jugador(1);
+		tablero.setJugada(jugador, 0, 0);
+		tablero.setJugada(jugador, 2, 2);
+		tablero.setJugada(jugador, 2, 0);
+		
+		for(int i=0; i<3; i++) {			
+			for(int j=0; j<3; j++) {	
+				System.out.print(tablero.getTablero()[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+		Tablero matrizToro=Jugada.matrizToroidal(tablero);
+		
+		for(int i=0; i<3; i++) {			
+			for(int j=0; j<3; j++) {	
+				System.out.print(matrizToro.getTablero()[i][j]);
+			}
+			System.out.println();
+		}
+
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
