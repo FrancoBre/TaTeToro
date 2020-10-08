@@ -33,8 +33,8 @@ public class Tablero {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 0, 0);
-		tablero.setJugada(jugador1, 1, 1);
-		tablero.setJugada(jugador1, 1, 2);
+		tablero.setJugada(jugador1, 0, 2);
+		tablero.setJugada(jugador1, 1, 0);
 		for(int i=0; i<3; i++) {
 			for(int j=0; j<3; j++) {
 				System.out.print(tablero.getTablero()[i][j]);

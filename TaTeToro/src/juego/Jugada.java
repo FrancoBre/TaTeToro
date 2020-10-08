@@ -21,6 +21,8 @@ public class Jugada {
 			}
 			
 			if(iguales(fila, jugadasGanadoras(tablero, jugador))) {
+				System.out.println(fila.toString());
+				System.out.println(jugadasGanadoras(tablero, jugador).toString());
 				System.out.println("Es ganadora horizontal");
 				return true;
 			}
@@ -73,7 +75,7 @@ public class Jugada {
 	}
 	
 	private static boolean iguales(ArrayList<Integer> jugadas, int[] jugadas2) {
-		for(int i=0; i<jugadas.size(); i++) if(!jugadas.contains(jugadas2[i])) return false;
+		for(int i=0; i<jugadas.size(); i++) if(!jugadas.get(i).equals(jugadas2[i])) return false;
 		return true;
 	}
 	
