@@ -16,6 +16,15 @@ public class Tablero {
 			
 			for(int j=0; i<3; i++) tablero[i][j]=0;		
 	}
+	
+	//Tablero de tamaño generico
+	public Tablero(int n) {
+		tablero=new int[n][n];
+		
+		for(int i=0; i<n; i++) 
+			
+			for(int j=0; i<n; i++) tablero[i][j]=0;		
+	}
 
 	public int[][] getTablero() {
 		return tablero;
@@ -31,17 +40,4 @@ public class Tablero {
 		return this.tablero.length;
 	}
 
-	public static void main(String[] args) {
-		int j=2;
-		
-		int[][] tablero= {{0,0,1},{0,1,0},{1,0,0}};
-		
-		for(int i=0; i<3; i++) if(j>0) {
-			if(tablero[i][j]!=1) System.out.println("falló");
-			j--;
-		}
-		
-		System.out.println("exito");
-	}
-	
 }
