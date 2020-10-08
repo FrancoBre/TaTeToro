@@ -2,6 +2,8 @@ package juego;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+
 public class Tablero {
 	private int[][] tablero;
 	
@@ -29,4 +31,17 @@ public class Tablero {
 		return this.tablero.length;
 	}
 
+	public static void main(String[] args) {
+		int j=2;
+		
+		int[][] tablero= {{0,0,1},{0,1,0},{1,0,0}};
+		
+		for(int i=0; i<3; i++) if(j>0) {
+			if(tablero[i][j]!=1) System.out.println("falló");
+			j--;
+		}
+		
+		System.out.println("exito");
+	}
+	
 }

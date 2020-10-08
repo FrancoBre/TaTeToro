@@ -48,31 +48,22 @@ public class Jugada {
 			diagonal.add(tablero.getTablero()[i][i]);	
 		}
 		
-		if(diagonal.equals(jugadasGanadoras(tablero, jugador)) && esGanadoraDiagonal2(tablero, jugador)) 
+		if(diagonal.equals(jugadasGanadoras(tablero, jugador)) || esGanadoraDiagonal2(tablero, jugador)) 
 			return true;
 		
 		return false;
 	}
 	
 	private static boolean esGanadoraDiagonal2(Tablero tablero, Jugador jugador) {
-		ArrayList<Integer> diagonal=new ArrayList<Integer>();
-		int j=tablero.tamanio();
+		int j=tablero.getTablero().length-1;
 		
-		for(int i=0; i<tablero.tamanio(); i++) {
-			diagonal.add(tablero.getTablero()[i][j]);
+		for(int i=0; i<tablero.getTablero().length; i++) if(j>0) {
+			if(tablero.getTablero()[i][j]!=jugador.getNumero()) return false;
 			j--;
 		}
 		
-		if(diagonal.equals(jugadasGanadoras(tablero, jugador)))
-			return true;
-		
-		return false;
+		return true;
 	}
-	
-//	private static boolean iguales(ArrayList<Integer> jugadas, int[] jugadas2) {
-//		for(int i=0; i<jugadas.size(); i++) if(!jugadas.get(i).equals(jugadas2[i])) return false;
-//		return true;
-//	}
 	
 	private static ArrayList<Integer> jugadasGanadoras(Tablero tablero, Jugador jugador) {
 		ArrayList<Integer> jugadas=new ArrayList<>();
