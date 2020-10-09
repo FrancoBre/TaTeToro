@@ -43,6 +43,16 @@ public class juegoTest {
 	}
 	
 	@Test
+	public void jugadaNoGanadoraToroidalTest() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 0);
+		tablero.setJugada(jugador1, 1, 1);
+		tablero.setJugada(jugador1, 1, 2);
+		assertFalse(Jugada.esGanadora(tablero, jugador1));
+	}
+	
+	@Test
 	public void jugadaNoGanadoraTest2() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
@@ -87,7 +97,7 @@ public class juegoTest {
 	}
 
 	@Test
-	public void jugadaGanadoraVertical1() {
+	public void jugadaGanadoraVerticalTest1() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(2);
 		tablero.setJugada(jugador1, 0, 0);
@@ -97,7 +107,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraVertical2() {
+	public void jugadaGanadoraVerticalTest2() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(2);
 		tablero.setJugada(jugador1, 1, 2);
@@ -107,7 +117,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraDiagonal1() {
+	public void jugadaGanadoraDiagonalTest1() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(2);
 		tablero.setJugada(jugador1, 0, 0);
@@ -117,7 +127,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraDiagonal2() {
+	public void jugadaGanadoraDiagonalTest2() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 0, 2);
@@ -127,7 +137,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraToroidal1() {
+	public void jugadaGanadoraToroidalTest1() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 1, 2);
@@ -137,7 +147,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraToroidal2() {
+	public void jugadaGanadoraToroidalTest2() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 0, 1);
@@ -147,7 +157,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraToroidal3() {
+	public void jugadaGanadoraToroidalTest3() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 0, 1);
