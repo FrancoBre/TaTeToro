@@ -1,9 +1,5 @@
 package juego;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
-
 public class Tablero {
 	private int[][] tablero;
 	
