@@ -127,7 +127,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void jugadaGanadoraToroidal() {
+	public void jugadaGanadoraToroidal1() {
 		Tablero tablero=new Tablero();
 		Jugador jugador1=new Jugador(1);
 		tablero.setJugada(jugador1, 1, 2);
@@ -136,4 +136,23 @@ public class juegoTest {
 		assertTrue(Jugada.esGanadora(tablero, jugador1));
 	}
 	
+	@Test
+	public void jugadaGanadoraToroidal2() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 1);
+		tablero.setJugada(jugador1, 1, 2);
+		tablero.setJugada(jugador1, 2, 0);
+		assertTrue(Jugada.esGanadora(tablero, jugador1));
+	}
+	
+	@Test
+	public void jugadaGanadoraToroidal3() {
+		Tablero tablero=new Tablero();
+		Jugador jugador1=new Jugador(1);
+		tablero.setJugada(jugador1, 0, 1);
+		tablero.setJugada(jugador1, 1, 0);
+		tablero.setJugada(jugador1, 2, 2);
+		assertTrue(Jugada.esGanadora(tablero, jugador1));
+	}
 }
