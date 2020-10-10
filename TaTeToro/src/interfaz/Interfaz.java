@@ -156,13 +156,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_1.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_1.setText("O");
-					}
+
 					tablero.setJugada(jugador, 0, 0);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -176,16 +170,25 @@ public class Interfaz {
 					}
 					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_1.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_1.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
 						
 				}
 			});
+		
+			
+			
 			btn_1.setBounds(79, 60, 55, 55);
 			juego.add(btn_1);
 			
@@ -194,13 +197,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_2.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_2.setText("O");
-					}
+			
 					tablero.setJugada(jugador, 0, 1);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -212,14 +209,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
-				//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					
+					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_2.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_2.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_2.setBounds(144, 60, 55, 55);
@@ -230,13 +235,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_3.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_3.setText("O");
-					}
+		
 					tablero.setJugada(jugador, 0, 2);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -248,14 +247,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_3.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_3.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_3.setBounds(209, 60, 55, 55);
@@ -266,13 +273,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_4.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_4.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 1, 0);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -284,14 +285,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_4.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_4.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_4.setBounds(79, 126, 55, 55);
@@ -302,13 +311,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_5.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_5.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 1, 1);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -320,14 +323,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_5.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_5.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_5.setBounds(144, 126, 55, 55);
@@ -338,13 +349,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_6.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_6.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 1, 2);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -356,14 +361,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_6.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_6.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_6.setBounds(209, 126, 55, 55);
@@ -374,13 +387,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_7.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_7.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 2, 0);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -392,15 +399,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
-					jugador.setNumero(resp);
 					if (resp==1) {	
+						btn_7.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_7.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_7.setBounds(79, 192, 55, 55);
@@ -411,13 +425,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_8.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_8.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 2, 1);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -429,15 +437,22 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
-					jugador.setNumero(resp);
 					if (resp==1) {	
+						btn_8.setText("O");
 						turno.setText(text_nombr1.getText());
+					
 					}
 					else {
+						btn_8.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_8.setBounds(144, 192, 55, 55);
@@ -448,13 +463,7 @@ public class Interfaz {
 				public void actionPerformed(ActionEvent arg0) {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
-					if(num_jug==1) {
-						//si el jugador es el 1, agrego una X al boton, ver de agregar foto
-						btn_9.setText("X");
-					}else {
-						//si el jugador es el 2, agrego una O al boton, ver de agregar foto
-						btn_9.setText("O");
-					}
+					
 					tablero.setJugada(jugador, 2, 2);
 					if(Jugada.esGanadora(tablero, jugador)){
 						System.out.println("GANADORRRR NUMERO "+num_jug);
@@ -466,14 +475,21 @@ public class Interfaz {
 						//Bloque de input
 						textGanador.setEditable(false);
 					}
+					
 					//CAMBIA LOS TURNOS Y LOS LABELS CON EL NOMBRE 	
+					// Y AHI MISMO PONE X SI ES JUGADOR 1 
+					// Y O SI ES JUGADOR 2 
+					
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_9.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_8.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+						
 				}
 			});
 			btn_9.setBounds(209, 192, 55, 55);
