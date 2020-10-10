@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Window;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -22,6 +23,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
 
 public class Interfaz {
@@ -554,36 +557,36 @@ public class Interfaz {
 		
 		
 		
-		JButton btnVolverAJugar = new JButton("Volver a jugar");
-		btnVolverAJugar.setBounds(111, 174, 109, 42);
-		resultado.add(btnVolverAJugar);
-		btnVolverAJugar.addActionListener(new ActionListener() {
+		JButton btnCerrar = new JButton("Cerrar");
+		btnCerrar.setBounds(111, 174, 109, 42);
+		resultado.add(btnCerrar);
+		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				btnVolverAJugar.setVisible(false);
+				btnCerrar.setVisible(false);
 				ingreso.setVisible(true);
 				text_nombr1.setText(" ");
 				text_nombr2.setText(" ");
-				btn_1.setEnabled(true);
-				btn_2.setEnabled(true);
-				btn_3.setEnabled(true);
-				btn_4.setEnabled(true);
-				btn_5.setEnabled(true);
-				btn_6.setEnabled(true);
-				btn_7.setEnabled(true);
-				btn_8.setEnabled(true);
-				btn_9.setEnabled(true);
-				btn_1.setText("");
-				btn_2.setText("");
-				btn_3.setText("");
-				btn_4.setText("");
-				btn_5.setText("");
-				btn_6.setText("");
-				btn_7.setText("");
-				btn_8.setText("");
-				btn_9.setText("");
-				removeAll();//or remove(JComponent)
-				
-				tablero.LimpiarTablero();
+				Window w = SwingUtilities.getWindowAncestor(ingreso);
+				 w.setVisible(false);
+//				btn_1.setEnabled(true);
+//				btn_2.setEnabled(true);
+//				btn_3.setEnabled(true);
+//				btn_4.setEnabled(true);
+//				btn_5.setEnabled(true);
+//				btn_6.setEnabled(true);
+//				btn_7.setEnabled(true);
+//				btn_8.setEnabled(true);
+//				btn_9.setEnabled(true);
+//				btn_1.setText("");
+//				btn_2.setText("");
+//				btn_3.setText("");
+//				btn_4.setText("");
+//				btn_5.setText("");
+//				btn_6.setText("");
+//				btn_7.setText("");
+//				btn_8.setText("");
+//				btn_9.setText("");
+//				tablero.LimpiarTablero();
 			}});
 		textGanador = new JTextField();
 		textGanador.setFont(new Font("Tahoma", Font.PLAIN, 12));
