@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.awt.Color;
+
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -21,6 +22,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class Interfaz {
 
@@ -104,16 +106,26 @@ public class Interfaz {
 			
 			//Declaracion de botones 
 			JButton btn_1 = new JButton("");
+			btn_1.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_2 = new JButton("");
+			btn_2.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_3 = new JButton("");
+			btn_3.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_4 = new JButton("");
+			btn_4.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_5 = new JButton("");
+			btn_5.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_6 = new JButton("");
+			btn_6.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_7 = new JButton("");
+			btn_7.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_8 = new JButton("");
+			btn_8.setFont(new Font("Arial Black", Font.PLAIN, 15));
 			JButton btn_9 = new JButton("");
+			btn_9.setFont(new Font("Arial Black", Font.PLAIN, 15));
 	
 		JButton btnNewButton = new JButton("Jugar");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Jugador jugador1=new Jugador(1);
@@ -133,24 +145,29 @@ public class Interfaz {
 		ingreso.add(btnNewButton);
 		
 		text_nombr1 = new JTextField();
+		text_nombr1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		text_nombr1.setBounds(139, 77, 135, 20);
 		ingreso.add(text_nombr1);
 		text_nombr1.setColumns(10);
 		
 		text_nombr2 = new JTextField();
+		text_nombr2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		text_nombr2.setBounds(139, 108, 135, 20);
 		ingreso.add(text_nombr2);
 		text_nombr2.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Jugador 1");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel.setBounds(67, 80, 72, 14);
 		ingreso.add(lblNewLabel);
 		
 		JLabel lblJugador = new JLabel("Jugador 2");
+		lblJugador.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblJugador.setBounds(67, 111, 72, 14);
 		ingreso.add(lblJugador);
 		
 		JLabel lblGanador = new JLabel("Ganador");
+		lblGanador.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblGanador.setBounds(68, 105, 72, 14);
 		resultado.add(lblGanador);
 		resultado.setVisible(false);
@@ -159,8 +176,6 @@ public class Interfaz {
 		frame.setBackground(UIManager.getColor("Button.disabledShadow"));
 		frame.setBounds(100, 100, 348, 340);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		
 		
 			//Action boton 1
 			btn_1.addActionListener(new ActionListener() {
@@ -185,12 +200,15 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
-					//	btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
+						//btn_1.setIcon(new ImageIcon(getClass().getResource("(//img/equis_negra.png")));
+						btn_1.setBackground(Color.red);
 						btn_1.setText("O");
+						
 						turno.setText(text_nombr1.getText());
 					}
 					else {
-						//btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
+						//btn_1.setIcon(new ImageIcon(getClass().getResource("//img/circulo_rojo.png")));
+						btn_1.setBackground(Color.blue);
 						btn_1.setText("X");
 						turno.setText(text_nombr2.getText());
 					}	
@@ -223,12 +241,13 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_2.setBackground(Color.red);
 						btn_2.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_2.setBackground(Color.BLUE);
 						btn_2.setText("X");
-						//btn_1.setIcon(new ImageIcon("cerrar.png"));
 						turno.setText(text_nombr2.getText());
 					}
 					//bloquea los botones cuando ya fueron usados!
@@ -261,10 +280,12 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_3.setBackground(Color.red);
 						btn_3.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_3.setBackground(Color.blue);
 						btn_3.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -298,11 +319,13 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 	
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_4.setBackground(Color.red);
 						btn_4.setText("O");
 						turno.setText(text_nombr1.getText());
 					
 					}
 					else {
+						btn_4.setBackground(Color.blue);
 						btn_4.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -336,10 +359,12 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_5.setBackground(Color.red);
 						btn_5.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_5.setBackground(Color.blue);
 						btn_5.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -373,11 +398,13 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_6.setBackground(Color.red);
 						btn_6.setText("O");
 						turno.setText(text_nombr1.getText());
 					
 					}
 					else {
+						btn_6.setBackground(Color.blue);
 						btn_6.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -411,10 +438,12 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_7.setBackground(Color.red);
 						btn_7.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_7.setBackground(Color.blue);
 						btn_7.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -448,10 +477,12 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_8.setBackground(Color.red);
 						btn_8.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_8.setBackground(Color.blue);
 						btn_8.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -487,10 +518,12 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
+						btn_9.setBackground(Color.red);
 						btn_9.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						btn_9.setBackground(Color.blue);
 						btn_9.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
@@ -502,10 +535,12 @@ public class Interfaz {
 			juego.add(btn_9);
 			
 			JLabel lblNewLabel_1 = new JLabel("Turno de :");
+			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 13));
 			lblNewLabel_1.setBounds(79, 11, 97, 14);
 			juego.add(lblNewLabel_1);
 			
 			JButton btn_volverMenu = new JButton("Volver al men\u00FA");
+			btn_volverMenu.setFont(new Font("Arial", Font.PLAIN, 13));
 			btn_volverMenu.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					//Action volver a jugar
@@ -546,11 +581,20 @@ public class Interfaz {
 				btn_7.setText("");
 				btn_8.setText("");
 				btn_9.setText("");
+				removeAll();//or remove(JComponent)
+				
+				tablero.LimpiarTablero();
 			}});
 		textGanador = new JTextField();
+		textGanador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textGanador.setColumns(10);
 		textGanador.setBounds(140, 102, 135, 20);
 		resultado.add(textGanador);
+		
+	}
+
+	protected void removeAll() {
+		// TODO Auto-generated method stub
 		
 	}
 }

@@ -35,6 +35,12 @@ public class Tablero {
 			throw new IllegalArgumentException("La posición ["+posicionFila+"]["+posicionColumna+"] ya está ocupada");
 		this.tablero[posicionFila][posicionColumna]=jugador.getNumero();
 	}
+	
+	public void LimpiarTablero() {
+		for(int i=0; i<3; i++) 
+			for(int j=0; i<3; i++)
+				tablero[i][j]=0;		
+	}
 
 	public int tamanio() {
 		return this.tablero.length;
