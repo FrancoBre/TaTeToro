@@ -16,6 +16,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.IndexColorModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -72,10 +73,17 @@ public class Interfaz {
 		ingreso.setBounds(0, 0, 338, 301);
 		frame.getContentPane().add(ingreso);
 		ingreso.setLayout(null);
+		//agrego color al primer panel 
+		Color colorBorboña=new Color(205, 97, 85 );
+		ingreso.setBackground(colorBorboña);
+		
 		
 		JPanel juego = new JPanel();
 		juego.setBounds(0, 0, 340, 301);
 		frame.getContentPane().add(juego);
+		//agrego color a el segundo panel
+		Color colorBorboña2=new Color(217, 136, 128);
+		juego.setBackground(colorBorboña2);
 		
 		juego.setLayout(null);
 		juego.setVisible(false);
@@ -84,6 +92,9 @@ public class Interfaz {
 		resultado.setLayout(null);
 		resultado.setBounds(0, 0, 338, 301);
 		frame.getContentPane().add(resultado);
+		//agrego color al tercer panel
+		Color colorBorboña3=new Color(169, 50, 38);
+		resultado.setBackground(colorBorboña3);
 		
 
 		JLabel turno = new JLabel("");
@@ -101,8 +112,7 @@ public class Interfaz {
 			JButton btn_7 = new JButton("");
 			JButton btn_8 = new JButton("");
 			JButton btn_9 = new JButton("");
-			
-		
+	
 		JButton btnNewButton = new JButton("Jugar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -175,8 +185,8 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
-						btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
-					//	btn_1.setText("O");
+					//	btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
+						btn_1.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
@@ -197,7 +207,6 @@ public class Interfaz {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 0, 1);
-					
 					if(Jugada.esGanadora(tablero, jugador)){
 						//Se muestra el panel de resultado y se esconde el del juego 
 						resultado.setVisible(true);
@@ -215,7 +224,6 @@ public class Interfaz {
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
 						btn_2.setText("O");
-						//btn_1.setIcon(new ImageIcon("cerrar.png"));
 						turno.setText(text_nombr1.getText());
 					}
 					else {
