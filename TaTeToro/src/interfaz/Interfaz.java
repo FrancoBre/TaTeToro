@@ -131,11 +131,11 @@ public class Interfaz {
 		ingreso.add(text_nombr2);
 		text_nombr2.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Jugador 1");
+		JLabel lblNewLabel = new JLabel("Nombre de jugador 1");
 		lblNewLabel.setBounds(67, 80, 72, 14);
 		ingreso.add(lblNewLabel);
 		
-		JLabel lblJugador = new JLabel("Jugador 2");
+		JLabel lblJugador = new JLabel("Nombre de jugador 2");
 		lblJugador.setBounds(67, 111, 72, 14);
 		ingreso.add(lblJugador);
 		
@@ -174,13 +174,17 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
-						btn_1.setText("O");
+						btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
+					//	btn_1.setText("O");
 						turno.setText(text_nombr1.getText());
 					}
 					else {
+						//btn_1.setIcon(new ImageIcon("circulo_rojo.png"));
 						btn_1.setText("X");
 						turno.setText(text_nombr2.getText());
 					}	
+					//bloquea los botones cuando ya fueron usados!
+					btn_1.setEnabled(false);
 				}
 			});
 		
@@ -213,12 +217,16 @@ public class Interfaz {
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
 						btn_2.setText("O");
+						//btn_1.setIcon(new ImageIcon("cerrar.png"));
 						turno.setText(text_nombr1.getText());
 					}
 					else {
 						btn_2.setText("X");
+						//btn_1.setIcon(new ImageIcon("cerrar.png"));
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_2.setEnabled(false);
 				}
 			});
 			btn_2.setBounds(144, 60, 55, 55);
@@ -254,6 +262,8 @@ public class Interfaz {
 						btn_3.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_3.setEnabled(false);
 				}
 			});
 			btn_3.setBounds(209, 60, 55, 55);
@@ -289,7 +299,9 @@ public class Interfaz {
 					else {
 						btn_4.setText("X");
 						turno.setText(text_nombr2.getText());
-					}	
+					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_4.setEnabled(false);
 				}
 			});
 			btn_4.setBounds(79, 126, 55, 55);
@@ -325,6 +337,8 @@ public class Interfaz {
 						btn_5.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_5.setEnabled(false);
 				}
 			});
 			btn_5.setBounds(144, 126, 55, 55);
@@ -361,6 +375,8 @@ public class Interfaz {
 						btn_6.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_6.setEnabled(false);
 				}
 			});
 			btn_6.setBounds(209, 126, 55, 55);
@@ -396,6 +412,7 @@ public class Interfaz {
 						btn_7.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					btn_7.setEnabled(false);
 				}
 			});
 			btn_7.setBounds(79, 192, 55, 55);
@@ -432,6 +449,8 @@ public class Interfaz {
 						btn_8.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_8.setEnabled(false);
 				}
 			});
 			btn_8.setBounds(144, 192, 55, 55);
@@ -469,6 +488,8 @@ public class Interfaz {
 						btn_9.setText("X");
 						turno.setText(text_nombr2.getText());
 					}
+					//bloquea los botones cuando ya fueron usados!
+					btn_9.setEnabled(false);
 				}
 			});
 			btn_9.setBounds(209, 192, 55, 55);
