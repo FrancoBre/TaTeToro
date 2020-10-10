@@ -568,6 +568,8 @@ public class Interfaz {
 				text_nombr2.setText(" ");
 				Window w = SwingUtilities.getWindowAncestor(ingreso);
 				 w.setVisible(false);
+
+				 //si alguno quiere verficarlo mire aca 
 //				btn_1.setEnabled(true);
 //				btn_2.setEnabled(true);
 //				btn_3.setEnabled(true);
