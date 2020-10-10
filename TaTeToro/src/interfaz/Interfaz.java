@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -131,11 +132,11 @@ public class Interfaz {
 		ingreso.add(text_nombr2);
 		text_nombr2.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Nombre de jugador 1");
+		JLabel lblNewLabel = new JLabel("Jugador 1");
 		lblNewLabel.setBounds(67, 80, 72, 14);
 		ingreso.add(lblNewLabel);
 		
-		JLabel lblJugador = new JLabel("Nombre de jugador 2");
+		JLabel lblJugador = new JLabel("Jugador 2");
 		lblJugador.setBounds(67, 111, 72, 14);
 		ingreso.add(lblJugador);
 		
@@ -187,9 +188,6 @@ public class Interfaz {
 					btn_1.setEnabled(false);
 				}
 			});
-		
-			
-			
 			btn_1.setBounds(79, 60, 55, 55);
 			juego.add(btn_1);
 			
@@ -497,7 +495,6 @@ public class Interfaz {
 			
 			JLabel lblNewLabel_1 = new JLabel("Turno de :");
 			lblNewLabel_1.setBounds(79, 11, 97, 14);
-			
 			juego.add(lblNewLabel_1);
 			
 			JButton btn_volverMenu = new JButton("Volver al men\u00FA");
@@ -517,12 +514,35 @@ public class Interfaz {
 		JButton btnVolverAJugar = new JButton("Volver a jugar");
 		btnVolverAJugar.setBounds(111, 174, 109, 42);
 		resultado.add(btnVolverAJugar);
-		
+		btnVolverAJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnVolverAJugar.setVisible(false);
+				ingreso.setVisible(true);
+				text_nombr1.setText(" ");
+				text_nombr2.setText(" ");
+				btn_1.setEnabled(true);
+				btn_2.setEnabled(true);
+				btn_3.setEnabled(true);
+				btn_4.setEnabled(true);
+				btn_5.setEnabled(true);
+				btn_6.setEnabled(true);
+				btn_7.setEnabled(true);
+				btn_8.setEnabled(true);
+				btn_9.setEnabled(true);
+				btn_1.setText("");
+				btn_2.setText("");
+				btn_3.setText("");
+				btn_4.setText("");
+				btn_5.setText("");
+				btn_6.setText("");
+				btn_7.setText("");
+				btn_8.setText("");
+				btn_9.setText("");
+			}});
 		textGanador = new JTextField();
 		textGanador.setColumns(10);
 		textGanador.setBounds(140, 102, 135, 20);
 		resultado.add(textGanador);
-		
 		
 	}
 }
