@@ -34,6 +34,7 @@ public class Interfaz {
 	private JTextField text_nombr2;
 	int resp; 
 	private JTextField textGanador;
+	private final JButton btnAcerca = new JButton("Acerca de: ");
 
 
 	/**
@@ -72,6 +73,46 @@ public class Interfaz {
 		frame.getContentPane().setBackground(UIManager.getColor("Button.background"));
 		frame.getContentPane().setLayout(null);
 		
+		JPanel acerca = new JPanel();
+		acerca.setBounds(0, 0, 335, 301);
+		frame.getContentPane().add(acerca);
+		//agrego color a el segundo panel
+		acerca.setBackground(Color.GRAY);
+		acerca.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Sobre nosotros:");
+		lblNewLabel_2.setForeground(Color.LIGHT_GRAY);
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_2.setBounds(81, 30, 189, 42);
+		acerca.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("C- -: ");
+		lblNewLabel_3.setFont(new Font("Broadway", Font.PLAIN, 25));
+		lblNewLabel_3.setBounds(22, 69, 94, 75);
+		acerca.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Nicol\u00E1s Wendler");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_4.setBounds(81, 127, 146, 28);
+		acerca.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Franco Br\u00E9goli");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_5.setBounds(81, 166, 140, 28);
+		acerca.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Sabrina Ar\u00E9valo");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_6.setBounds(81, 205, 122, 28);
+		acerca.add(lblNewLabel_6);
+		
+		JButton btn_volver = new JButton("Volver");
+		btn_volver.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btn_volver.setForeground(Color.BLACK);
+		btn_volver.setBounds(27, 256, 89, 23);
+		acerca.add(btn_volver);
+		acerca.setVisible(false);
+		
 		
 		
 		JPanel ingreso = new JPanel();
@@ -100,6 +141,7 @@ public class Interfaz {
 		//agrego color al tercer panel
 		Color colorBorboña3=new Color(169, 50, 38);
 		resultado.setBackground(colorBorboña3);
+		
 		
 
 		JLabel turno = new JLabel("");
@@ -168,6 +210,8 @@ public class Interfaz {
 		lblJugador.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblJugador.setBounds(67, 111, 72, 14);
 		ingreso.add(lblJugador);
+		btnAcerca.setBounds(19, 259, 135, 31);
+		ingreso.add(btnAcerca);
 		
 		JLabel lblGanador = new JLabel("Ganador");
 		lblGanador.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -179,6 +223,25 @@ public class Interfaz {
 		frame.setBackground(UIManager.getColor("Button.disabledShadow"));
 		frame.setBounds(100, 100, 348, 340);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+		//Action boton acerca
+		btnAcerca.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnAcerca.setVisible(false);
+				acerca.setVisible(true);
+				btnNewButton.setVisible(false);
+				text_nombr1.setVisible(false);
+			}}); 
+		
+		//Action boton volver
+				btn_volver.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						ingreso.setVisible(true);
+						acerca.setVisible(false);
+						btnNewButton.setVisible(true);
+						text_nombr1.setVisible(true);
+						btnAcerca.setVisible(true);
+					}});
 		
 			//Action boton 1
 			btn_1.addActionListener(new ActionListener() {
@@ -203,15 +266,14 @@ public class Interfaz {
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
 					resp=jugador.cambiarTurno(jugador);
 					if (resp==1) {	
-						//btn_1.setIcon(new ImageIcon(getClass().getResource("(//img/equis_negra.png")));
+						//btn_1.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\circulo_rojo"));
 						btn_1.setBackground(Color.red);
 						btn_1.setText("O");
-						
 						turno.setText(text_nombr1.getText());
 					}
 					else {
-						//btn_1.setIcon(new ImageIcon(getClass().getResource("//img/circulo_rojo.png")));
 						btn_1.setBackground(Color.blue);
+						//btn_1.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\equis_negra"));
 						btn_1.setText("X");
 						turno.setText(text_nombr2.getText());
 					}	
