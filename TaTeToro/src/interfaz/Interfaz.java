@@ -120,16 +120,16 @@ public class Interfaz {
 		frame.getContentPane().add(ingreso);
 		ingreso.setLayout(null);
 		//agrego color al primer panel 
-		Color colorBorboña=new Color(205, 97, 85 );
-		ingreso.setBackground(colorBorboña);
+		Color colorBorbonia=new Color(205, 97, 85 );
+		ingreso.setBackground(colorBorbonia);
 		
 		
 		JPanel juego = new JPanel();
 		juego.setBounds(0, 0, 340, 301);
 		frame.getContentPane().add(juego);
 		//agrego color a el segundo panel
-		Color colorBorboña2=new Color(217, 136, 128);
-		juego.setBackground(colorBorboña2);
+		Color colorBorbonia2=new Color(217, 136, 128);
+		juego.setBackground(colorBorbonia2);
 		
 		juego.setLayout(null);
 		juego.setVisible(false);
@@ -139,8 +139,8 @@ public class Interfaz {
 		resultado.setBounds(0, 0, 338, 301);
 		frame.getContentPane().add(resultado);
 		//agrego color al tercer panel
-		Color colorBorboña3=new Color(169, 50, 38);
-		resultado.setBackground(colorBorboña3);
+		Color colorBorbonia3=new Color(169, 50, 38);
+		resultado.setBackground(colorBorbonia3);
 		
 		
 
