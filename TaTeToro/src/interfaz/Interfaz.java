@@ -72,49 +72,14 @@ public class Interfaz {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(UIManager.getColor("Button.background"));
 		frame.getContentPane().setLayout(null);
-		
+		// PANELES 
 		JPanel acerca = new JPanel();
 		acerca.setBounds(0, 0, 335, 301);
 		frame.getContentPane().add(acerca);
 		//agrego color a el segundo panel
 		acerca.setBackground(Color.GRAY);
 		acerca.setLayout(null);
-		
-		JLabel lblNewLabel_2 = new JLabel("Sobre nosotros:");
-		lblNewLabel_2.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(81, 30, 189, 42);
-		acerca.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("C- -: ");
-		lblNewLabel_3.setFont(new Font("Broadway", Font.PLAIN, 25));
-		lblNewLabel_3.setBounds(22, 69, 94, 75);
-		acerca.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("Nicol\u00E1s Wendler");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblNewLabel_4.setBounds(81, 127, 146, 28);
-		acerca.add(lblNewLabel_4);
-		
-		JLabel lblNewLabel_5 = new JLabel("Franco Br\u00E9goli");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblNewLabel_5.setBounds(81, 166, 140, 28);
-		acerca.add(lblNewLabel_5);
-		
-		JLabel lblNewLabel_6 = new JLabel("Sabrina Ar\u00E9valo");
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblNewLabel_6.setBounds(81, 205, 122, 28);
-		acerca.add(lblNewLabel_6);
-		
-		JButton btn_volver = new JButton("Volver");
-		btn_volver.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_volver.setForeground(Color.BLACK);
-		btn_volver.setBounds(27, 256, 89, 23);
-		acerca.add(btn_volver);
-		acerca.setVisible(false);
-		
-		
-		
+	
 		JPanel ingreso = new JPanel();
 		ingreso.setBounds(0, 0, 338, 301);
 		frame.getContentPane().add(ingreso);
@@ -130,7 +95,6 @@ public class Interfaz {
 		//agrego color a el segundo panel
 		Color colorBorboña2=new Color(217, 136, 128);
 		juego.setBackground(colorBorboña2);
-		
 		juego.setLayout(null);
 		juego.setVisible(false);
 		
@@ -142,8 +106,6 @@ public class Interfaz {
 		Color colorBorboña3=new Color(169, 50, 38);
 		resultado.setBackground(colorBorboña3);
 		
-		
-
 		JLabel turno = new JLabel("");
 		turno.setBounds(144, 11, 120, 14);
 		juego.add(turno);
@@ -169,25 +131,10 @@ public class Interfaz {
 			JButton btn_9 = new JButton("");
 			btn_9.setFont(new Font("Arial Black", Font.PLAIN, 15));
 	
-		JButton btnNewButton = new JButton("Jugar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Jugador jugador1=new Jugador(1);
-				Jugador jugador2=new Jugador(2);
-				
-//				jugador1.setNombre(text_nombr1.getText());
-//				jugador2.setNombre(text_nombr2.getText());
-				
-				ingreso.setVisible(false);
-				juego.setVisible(true);
-				
-				turno.setText(text_nombr1.getText());
-				
-			}
-		});
-		btnNewButton.setBounds(111, 174, 109, 42);
-		ingreso.add(btnNewButton);
+			JButton btnNewButton = new JButton("Jugar");
+			btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			
+		
 		
 		text_nombr1 = new JTextField();
 		text_nombr1.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -223,7 +170,58 @@ public class Interfaz {
 		frame.setBackground(UIManager.getColor("Button.disabledShadow"));
 		frame.setBounds(100, 100, 348, 340);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel lblNewLabel_2 = new JLabel("Sobre nosotros:");
+		lblNewLabel_2.setForeground(Color.LIGHT_GRAY);
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_2.setBounds(81, 30, 189, 42);
+		acerca.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("C- -: ");
+		lblNewLabel_3.setFont(new Font("Broadway", Font.PLAIN, 25));
+		lblNewLabel_3.setBounds(22, 69, 94, 75);
+		acerca.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Nicol\u00E1s Wendler");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_4.setBounds(81, 127, 146, 28);
+		acerca.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Franco Br\u00E9goli");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_5.setBounds(81, 166, 140, 28);
+		acerca.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Sabrina Ar\u00E9valo");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_6.setBounds(81, 205, 122, 28);
+		acerca.add(lblNewLabel_6);
+		
+		JButton btn_volver = new JButton("Volver");
+		btn_volver.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btn_volver.setForeground(Color.BLACK);
+		btn_volver.setBounds(27, 256, 89, 23);
+		acerca.add(btn_volver);
+		acerca.setVisible(false);
+		
+		//Action boton de verJugada
+		JButton verJugada = new JButton("Jugada ganadora");
+		verJugada.setBounds(40, 175, 109, 42);
+		resultado.add(verJugada);
 	
+		//Action boton Jugar
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Jugador jugador1=new Jugador(1);
+				Jugador jugador2=new Jugador(2);
+				ingreso.setVisible(false);
+				juego.setVisible(true);
+				turno.setText(text_nombr1.getText());	
+			}
+		});
+		btnNewButton.setBounds(111, 174, 109, 42);
+		ingreso.add(btnNewButton);
+		
 		//Action boton acerca
 		btnAcerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -618,9 +616,9 @@ public class Interfaz {
 			juego.add(btn_volverMenu);
 		
 		
-		
+		//Action boton cerrar
 		JButton btnCerrar = new JButton("Cerrar");
-		btnCerrar.setBounds(111, 174, 109, 42);
+		btnCerrar.setBounds(185, 175, 109, 42);
 		resultado.add(btnCerrar);
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
