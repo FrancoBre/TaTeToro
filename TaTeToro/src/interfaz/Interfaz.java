@@ -137,7 +137,11 @@ public class Interfaz {
 	
 			JButton btnNewButton = new JButton("Jugar");
 			btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-			
+
+			JButton verJugada = new JButton("Jugada ganadora");
+			verJugada.setBounds(40, 175, 109, 42);
+			resultado.add(verJugada);
+
 		
 		
 		text_nombr1 = new JTextField();
@@ -208,11 +212,15 @@ public class Interfaz {
 		acerca.add(btn_volver);
 		acerca.setVisible(false);
 		
+		
+		
+		
+		
+		//-----------------------BOTONES----------------------------------// 
+		
+		
 		//Action boton de verJugada
-		JButton verJugada = new JButton("Jugada ganadora");
-		verJugada.setBounds(40, 175, 109, 42);
-		resultado.add(verJugada);
-	
+			
 		//Action boton Jugar
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -252,34 +260,14 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 0, 0);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugadora ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						//btn_1.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\circulo_rojo"));
-						btn_1.setBackground(Color.red);
-						btn_1.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_1.setBackground(Color.blue);
-						//btn_1.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\equis_negra"));
-						btn_1.setText("X");
-						turno.setText(text_nombr2.getText());
-					}	
+					cambiarTurnos(turno, btn_1, jugador);	
+					
 					//bloquea los botones cuando ya fueron usados!
+					
 					btn_1.setEnabled(false);
 				}
 			});
@@ -292,31 +280,13 @@ public class Interfaz {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 0, 1);
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					
+					//verifica si es jugadora ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_2.setBackground(Color.red);
-						btn_2.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_2.setBackground(Color.BLUE);
-						btn_2.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_2, jugador);
+					
 					//bloquea los botones cuando ya fueron usados!
 					btn_2.setEnabled(false);
 				}
@@ -331,31 +301,12 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 0, 2);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
-					 
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
+					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_3.setBackground(Color.red);
-						btn_3.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_3.setBackground(Color.blue);
-						btn_3.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_3, jugador);
+					
 					//bloquea los botones cuando ya fueron usados!
 					btn_3.setEnabled(false);
 				}
@@ -369,33 +320,12 @@ public class Interfaz {
 					int num_jug = 0;
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 1, 0);
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
+					cambiarTurnos(turno, btn_4, jugador);
 					
-					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 	
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_4.setBackground(Color.red);
-						btn_4.setText("O");
-						turno.setText(text_nombr1.getText());
-					
-					}
-					else {
-						btn_4.setBackground(Color.blue);
-						btn_4.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
 					//bloquea los botones cuando ya fueron usados!
 					btn_4.setEnabled(false);
 				}
@@ -410,31 +340,12 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 1, 1);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_5.setBackground(Color.red);
-						btn_5.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_5.setBackground(Color.blue);
-						btn_5.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_5, jugador);
+					
 					//bloquea los botones cuando ya fueron usados!
 					btn_5.setEnabled(false);
 				}
@@ -449,32 +360,12 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 1, 2);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_6.setBackground(Color.red);
-						btn_6.setText("O");
-						turno.setText(text_nombr1.getText());
+					cambiarTurnos(turno, btn_6, jugador);
 					
-					}
-					else {
-						btn_6.setBackground(Color.blue);
-						btn_6.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
 					//bloquea los botones cuando ya fueron usados!
 					btn_6.setEnabled(false);
 				}
@@ -489,31 +380,12 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 2, 0);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado y muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_7.setBackground(Color.red);
-						btn_7.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_7.setBackground(Color.blue);
-						btn_7.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_7, jugador);
+					
 					btn_7.setEnabled(false);
 				}
 			});
@@ -527,32 +399,12 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 2, 1);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado 
-						// muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 					
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_8.setBackground(Color.red);
-						btn_8.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_8.setBackground(Color.blue);
-						btn_8.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_8, jugador);
+					
 					//bloquea los botones cuando ya fueron usados!
 					btn_8.setEnabled(false);
 				}
@@ -567,33 +419,11 @@ public class Interfaz {
 					num_jug = jugador.getNumero();
 					tablero.setJugada(jugador, 2, 2);
 					
-					if(Jugada.esGanadora(tablero, jugador)){
-						//Se muestra el panel de resultado y se esconde el del juego 
-						resultado.setVisible(true);
-						juego.setVisible(false);
-						//Agrego ganador al input de panel resultado 
-						// muestra el nombre del ganador
-						if(num_jug==1) 
-							textGanador.setText(text_nombr1.getText() );
-						else
-							textGanador.setText(text_nombr2.getText() );
-						
-						//Bloque de input
-						textGanador.setEditable(false);
-					}
+					//verifica si es jugada ganadora
+					verificaJugadaGanadora(juego, resultado, tablero, jugador, num_jug);
 				
 					//Cambiar los turnos, cambia nombre de los labels y agrega X o O dependiendo quien sea el jugador 
-					resp=jugador.cambiarTurno(jugador);
-					if (resp==1) {	
-						btn_9.setBackground(Color.red);
-						btn_9.setText("O");
-						turno.setText(text_nombr1.getText());
-					}
-					else {
-						btn_9.setBackground(Color.blue);
-						btn_9.setText("X");
-						turno.setText(text_nombr2.getText());
-					}
+					cambiarTurnos(turno, btn_9, jugador);
 					//bloquea los botones cuando ya fueron usados!
 					btn_9.setEnabled(false);
 				}
@@ -665,5 +495,48 @@ public class Interfaz {
 	protected void removeAll() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	/**
+	 * @param juego
+	 * @param resultado
+	 * @param tablero
+	 * @param jugador
+	 * @param num_jug
+	 */
+	public void verificaJugadaGanadora(JPanel juego, JPanel resultado, Tablero tablero, Jugador jugador, int num_jug) {
+		if(Jugada.esGanadora(tablero, jugador)){
+			//Se muestra el panel de resultado y se esconde el del juego 
+			resultado.setVisible(true);
+			juego.setVisible(false);
+			//Agrego ganador al input de panel resultado y muestra el nombre del ganador
+			if(num_jug==1) 
+				textGanador.setText(text_nombr1.getText() );
+			else
+				textGanador.setText(text_nombr2.getText() );
+			//Bloque de input
+			textGanador.setEditable(false);
+		}
+	}
+
+	/**
+	 * @param turno
+	 * @param btn_1
+	 * @param jugador
+	 */
+	public void cambiarTurnos(JLabel turno, JButton btn, Jugador jugador) {
+		resp=jugador.cambiarTurno(jugador);
+		if (resp==1) {	
+			//btn.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\circulo_rojo"));
+			btn.setBackground(Color.red);
+			btn.setText("O");
+			turno.setText(text_nombr1.getText());
+		}
+		else {
+			btn.setBackground(Color.blue);
+			//btn.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\equis_negra"));
+			btn.setText("X");
+			turno.setText(text_nombr2.getText());
+		}
 	}
 }
