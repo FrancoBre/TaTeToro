@@ -3,22 +3,18 @@ package interfaz;
 import java.awt.Color;
 
 import java.awt.EventQueue;
-import java.awt.Image;
+
 import java.awt.Window;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import juego.Jugador;
 import juego.Jugada;
 import juego.Tablero;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.image.IndexColorModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -94,8 +90,6 @@ public class Interfaz {
 		juego.setBounds(0, 0, 340, 301);
 		frame.getContentPane().add(juego);
 		//agrego color a el segundo panel
-		Color colorBorboña2=new Color(217, 136, 128);
-		juego.setBackground(colorBorboña2);
 		Color colorBorbonia2=new Color(217, 136, 128);
 		juego.setBackground(colorBorbonia2);
 		
@@ -224,8 +218,6 @@ public class Interfaz {
 		//Action boton Jugar
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Jugador jugador1=new Jugador(1);
-				Jugador jugador2=new Jugador(2);
 				ingreso.setVisible(false);
 				juego.setVisible(true);
 				turno.setText(text_nombr1.getText());	
@@ -463,37 +455,12 @@ public class Interfaz {
 				Window w = SwingUtilities.getWindowAncestor(ingreso);
 				 w.setVisible(false);
 
-				 //si alguno quiere verficarlo mire aca 
-//				btn_1.setEnabled(true);
-//				btn_2.setEnabled(true);
-//				btn_3.setEnabled(true);
-//				btn_4.setEnabled(true);
-//				btn_5.setEnabled(true);
-//				btn_6.setEnabled(true);
-//				btn_7.setEnabled(true);
-//				btn_8.setEnabled(true);
-//				btn_9.setEnabled(true);
-//				btn_1.setText("");
-//				btn_2.setText("");
-//				btn_3.setText("");
-//				btn_4.setText("");
-//				btn_5.setText("");
-//				btn_6.setText("");
-//				btn_7.setText("");
-//				btn_8.setText("");
-//				btn_9.setText("");
-//				tablero.LimpiarTablero();
 			}});
 		textGanador = new JTextField();
 		textGanador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textGanador.setColumns(10);
 		textGanador.setBounds(140, 102, 135, 20);
 		resultado.add(textGanador);
-		
-	}
-
-	protected void removeAll() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -527,14 +494,12 @@ public class Interfaz {
 	public void cambiarTurnos(JLabel turno, JButton btn, Jugador jugador) {
 		resp=jugador.cambiarTurno(jugador);
 		if (resp==1) {	
-			//btn.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\circulo_rojo"));
 			btn.setBackground(Color.red);
 			btn.setText("O");
 			turno.setText(text_nombr1.getText());
 		}
 		else {
 			btn.setBackground(Color.blue);
-			//btn.setSelectedIcon(new ImageIcon("C:\\Users\\sabri\\git\\TaTeToro\\TaTeToro\\TaTeToro\\TaTeToro\\img\\equis_negra"));
 			btn.setText("X");
 			turno.setText(text_nombr2.getText());
 		}
