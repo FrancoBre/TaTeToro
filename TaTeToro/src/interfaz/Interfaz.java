@@ -71,14 +71,14 @@ public class Interfaz {
 		frame.getContentPane().setLayout(null);
 		// PANELES 
 		JPanel acerca = new JPanel();
-		acerca.setBounds(0, 0, 335, 301);
+		acerca.setBounds(0, 0, 360, 300);
 		frame.getContentPane().add(acerca);
 		//agrego color a el segundo panel
 		acerca.setBackground(Color.GRAY);
 		acerca.setLayout(null);
 	
 		JPanel ingreso = new JPanel();
-		ingreso.setBounds(0, 0, 338, 301);
+		ingreso.setBounds(0, 0, 360, 300);
 		frame.getContentPane().add(ingreso);
 		ingreso.setLayout(null);
 		//agrego color al primer panel 
@@ -87,7 +87,7 @@ public class Interfaz {
 		
 		
 		JPanel juego = new JPanel();
-		juego.setBounds(0, 0, 340, 301);
+		juego.setBounds(0, 0, 360, 300);
 		frame.getContentPane().add(juego);
 		//agrego color a el segundo panel
 		Color colorBorbonia2=new Color(217, 136, 128);
@@ -98,7 +98,7 @@ public class Interfaz {
 		
 		JPanel resultado = new JPanel();
 		resultado.setLayout(null);
-		resultado.setBounds(0, 0, 338, 301);
+		resultado.setBounds(0, 0, 360, 300);
 		frame.getContentPane().add(resultado);
 		//agrego color al tercer panel
 		Color colorBorbonia3=new Color(169, 50, 38);
@@ -132,9 +132,7 @@ public class Interfaz {
 			JButton btnNewButton = new JButton("Jugar");
 			btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 
-			JButton verJugada = new JButton("Jugada ganadora");
-			verJugada.setBounds(40, 175, 109, 42);
-			resultado.add(verJugada);
+			
 
 		
 		
@@ -170,7 +168,7 @@ public class Interfaz {
 		Tablero tablero=new Tablero();
 		Jugador jugador=new Jugador(1);
 		frame.setBackground(UIManager.getColor("Button.disabledShadow"));
-		frame.setBounds(100, 100, 348, 340);
+		frame.setBounds(100, 100, 360, 332);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblNewLabel_2 = new JLabel("Sobre nosotros:");
@@ -206,7 +204,21 @@ public class Interfaz {
 		acerca.add(btn_volver);
 		acerca.setVisible(false);
 		
+		JLabel turno_de = new JLabel("Turno de :");
+		turno_de.setFont(new Font("Arial", Font.PLAIN, 13));
+		turno_de.setBounds(79, 11, 97, 14);
+		juego.add(turno_de);
 		
+		JButton volver_resul = new JButton("Volver al resultado");
+		volver_resul.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				juego.setVisible(false);
+				resultado.setVisible(true);
+			}
+		});
+		volver_resul.setBounds(206, 267, 124, 23);
+		juego.add(volver_resul);
+	
 		
 		
 		
@@ -220,6 +232,7 @@ public class Interfaz {
 			public void actionPerformed(ActionEvent arg0) {
 				ingreso.setVisible(false);
 				juego.setVisible(true);
+				volver_resul.setVisible(false);
 				turno.setText(text_nombr1.getText());	
 			}
 		});
@@ -245,6 +258,28 @@ public class Interfaz {
 						btnAcerca.setVisible(true);
 					}});
 		
+				JButton verJugada = new JButton("Jugada ganadora");
+				verJugada.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						juego.setVisible(true);
+						resultado.setVisible(false);
+						volver_resul.setVisible(true);
+						turno_de.setVisible(false);
+						turno.setVisible(false);
+						btn_1.setEnabled(false);
+						btn_2.setEnabled(false);
+						btn_3.setEnabled(false);
+						btn_4.setEnabled(false);
+						btn_5.setEnabled(false);
+						btn_6.setEnabled(false);
+						btn_7.setEnabled(false);
+						btn_8.setEnabled(false);
+						btn_9.setEnabled(false);
+					}
+				});
+				verJugada.setBounds(40, 175, 117, 42);
+				resultado.add(verJugada);		
+				
 			//Action boton 1
 			btn_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -423,28 +458,28 @@ public class Interfaz {
 			btn_9.setBounds(209, 192, 55, 55);
 			juego.add(btn_9);
 			
-			JLabel lblNewLabel_1 = new JLabel("Turno de :");
-			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 13));
-			lblNewLabel_1.setBounds(79, 11, 97, 14);
-			juego.add(lblNewLabel_1);
+			
 			
 			JButton btn_volverMenu = new JButton("Volver al men\u00FA");
 			btn_volverMenu.setFont(new Font("Arial", Font.PLAIN, 13));
 			btn_volverMenu.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					//Action volver a jugar
+					turno_de.setVisible(true);
+					turno.setVisible(true);
 					juego.setVisible(false);
 					ingreso.setVisible(true);
 					//Limpiar tablero y jugadores
 				}
 			});
-			btn_volverMenu.setBounds(10, 267, 110, 23);
+			btn_volverMenu.setBounds(10, 267, 124, 23);
 			juego.add(btn_volverMenu);
-		
+			
+			
 		
 		//Action boton cerrar
 		JButton btnCerrar = new JButton("Cerrar");
-		btnCerrar.setBounds(185, 175, 109, 42);
+		btnCerrar.setBounds(112, 234, 117, 42);
 		resultado.add(btnCerrar);
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -461,6 +496,22 @@ public class Interfaz {
 		textGanador.setColumns(10);
 		textGanador.setBounds(140, 102, 135, 20);
 		resultado.add(textGanador);
+		
+		JButton volver_menu = new JButton("Volver al men\u00FA");
+		volver_menu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Action volver a jugar
+				turno_de.setVisible(true);
+				turno.setVisible(true);
+				juego.setVisible(false);
+				resultado.setVisible(false);
+				ingreso.setVisible(true);
+				//Limpiar tablero y jugadores
+			}
+		});
+		volver_menu.setFont(new Font("Arial", Font.PLAIN, 13));
+		volver_menu.setBounds(192, 175, 124, 42);
+		resultado.add(volver_menu);
 		
 	}
 
