@@ -37,9 +37,11 @@ public class Tablero {
 	}
 	
 	public void LimpiarTablero() {
-		for(int i=0; i<3; i++) 
-			for(int j=0; i<3; i++)
-				tablero[i][j]=0;		
+		for(int i=0; i<3; i++) { 
+			for(int j=0; j<3; j++) {
+				tablero[i][j]=0;	
+			}
+		}
 	}
 
 	public int tamanio() {

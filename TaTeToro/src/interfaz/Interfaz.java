@@ -459,7 +459,7 @@ public class Interfaz {
 			juego.add(btn_9);
 			
 			
-			
+			//volver al menu desde el juego
 			JButton btn_volverMenu = new JButton("Volver al men\u00FA");
 			btn_volverMenu.setFont(new Font("Arial", Font.PLAIN, 13));
 			btn_volverMenu.addActionListener(new ActionListener() {
@@ -469,7 +469,9 @@ public class Interfaz {
 					turno.setVisible(true);
 					juego.setVisible(false);
 					ingreso.setVisible(true);
-					//Limpiar tablero y jugadores
+					//limpio el tablero y los jugadores
+					tablero.LimpiarTablero();
+					jugador.limpiarJugadores();
 				}
 			});
 			btn_volverMenu.setBounds(10, 267, 124, 23);
@@ -497,6 +499,7 @@ public class Interfaz {
 		textGanador.setBounds(140, 102, 135, 20);
 		resultado.add(textGanador);
 		
+		//volver al menu desde resultado
 		JButton volver_menu = new JButton("Volver al men\u00FA");
 		volver_menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -506,7 +509,9 @@ public class Interfaz {
 				juego.setVisible(false);
 				resultado.setVisible(false);
 				ingreso.setVisible(true);
-				//Limpiar tablero y jugadores
+				//limpio el tablero y los jugadores
+				tablero.LimpiarTablero();
+				jugador.limpiarJugadores();
 			}
 		});
 		volver_menu.setFont(new Font("Arial", Font.PLAIN, 13));

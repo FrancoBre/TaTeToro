@@ -57,5 +57,11 @@ public class Jugador {
 		
 	return resp; 
 	}
+	
+	public void limpiarJugadores() {
+		this.nombre1 = "";
+		this.nombre2 = "";
+		this.numero = 0;
+	}
 
 }
