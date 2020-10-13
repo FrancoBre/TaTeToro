@@ -472,6 +472,19 @@ public class Interfaz {
 					//limpio el tablero y los jugadores
 					tablero.LimpiarTablero();
 					jugador.limpiarJugadores();
+					//Limpio los nombres 
+					text_nombr1.setText("");
+					text_nombr2.setText("");
+					//Limpia las propiedades de los botones (color y contenido)
+					limpiarBoton(btn_1);
+					limpiarBoton(btn_2);
+					limpiarBoton(btn_3);
+					limpiarBoton(btn_4);
+					limpiarBoton(btn_5);
+					limpiarBoton(btn_6);
+					limpiarBoton(btn_7);
+					limpiarBoton(btn_8);
+					limpiarBoton(btn_9);
 				}
 			});
 			btn_volverMenu.setBounds(10, 267, 124, 23);
@@ -512,6 +525,20 @@ public class Interfaz {
 				//limpio el tablero y los jugadores
 				tablero.LimpiarTablero();
 				jugador.limpiarJugadores();
+				//Limpio los nombres 
+				text_nombr1.setText("");
+				text_nombr2.setText("");
+				//Limpia las propiedades de los botones (color y contenido)
+				limpiarBoton(btn_1);
+				limpiarBoton(btn_2);
+				limpiarBoton(btn_3);
+				limpiarBoton(btn_4);
+				limpiarBoton(btn_5);
+				limpiarBoton(btn_6);
+				limpiarBoton(btn_7);
+				limpiarBoton(btn_8);
+				limpiarBoton(btn_9);
+				
 			}
 		});
 		volver_menu.setFont(new Font("Arial", Font.PLAIN, 13));
@@ -559,5 +586,11 @@ public class Interfaz {
 			btn.setText("X");
 			turno.setText(text_nombr2.getText());
 		}
+	}
+	
+	public void limpiarBoton(JButton btn) {
+		btn.setText("");
+		btn.setEnabled(true);
+		btn.setBackground(Color.WHITE);
 	}
 }
